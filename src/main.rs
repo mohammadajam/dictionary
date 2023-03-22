@@ -9,15 +9,7 @@ fn main() {
     let content_byte = contents.as_bytes();
 
     let json: serde_json::Value = serde_json::from_slice(content_byte).unwrap();
-/*
-    for (k, v) in json.as_object().unwrap() {
-        let string = k.as_str();
 
-        if string == "crimson" {
-            println!("{}", v.as_str().unwrap());
-        }
-    }
-*/
     let mut quit = false;
 
     while !quit {
