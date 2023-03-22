@@ -23,7 +23,7 @@ fn main() {
         let mut search = String::new();
 
         match input.trim() {
-            "q" => quit = true,
+            "qq" => quit = true,
             _ => search = input
         }
 
