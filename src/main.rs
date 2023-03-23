@@ -10,9 +10,8 @@ fn main() {
 
     let json: serde_json::Value = serde_json::from_slice(content_byte).unwrap();
 
-    let mut quit = false;
 
-    while !quit {
+    loop {
         let mut not_found = true;
 
         print!("{}", "Search: ".blue().bold().italic());
@@ -20,15 +19,10 @@ fn main() {
         let mut input = String::new();
         io::stdin().read_line(&mut input).expect("Error: READ LINE");
 
-        let mut search = String::new();
-
-        match input.trim() {
-            "qq" => quit = true,
-            _ => search = input
-        }
+        if input.trim() == "qq" { println!("{}", "Quiting".red().bold().italic()); break; }
 
         for (k, v) in json.as_object().unwrap() {
-            if k.as_str() == search.trim() {
+            if k.as_str() == input.trim() {
                 println!("{}", v.as_str().unwrap());
                 not_found = false;
             }
