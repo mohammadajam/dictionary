@@ -19,7 +19,8 @@ fn main() {
         let mut input = String::new();
         io::stdin().read_line(&mut input).expect("Error: READ LINE");
 
-        if input.trim() == "qq" { println!("{}", "Quiting".red().bold().italic()); break; }
+        if input.trim() == "qq" { println!("{}", "Quiting".red().bold().italic()); std::process::Command::new("clear").status().unwrap(); break; }
+        if input.trim() == "cc" { std::process::Command::new("clear").status().unwrap(); not_found = false; }
 
         for (k, v) in json.as_object().unwrap() {
             if k.as_str() == input.trim() {
