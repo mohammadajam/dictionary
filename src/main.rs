@@ -26,6 +26,7 @@ fn main() {
             if k.as_str() == input.trim() {
                 println!("{}", v.as_str().unwrap());
                 not_found = false;
+                break;
             }
         } 
 
